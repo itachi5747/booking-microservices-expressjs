@@ -1,0 +1,26 @@
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - secret.yaml
+  - otel-collector-configmap.yaml
+  - otel-collector-deployment.yaml
+  - otel-collector-service.yaml
+  - postgres-pvc.yaml
+  - postgres-deployment.yaml
+  - postgres-service.yaml
+  - rabbitmq-pvc.yaml
+  - rabbitmq-deployment.yaml
+  - rabbitmq-service.yaml
+  - jaeger-deployment.yaml
+  - jaeger-service.yaml
+  - zipkin-deployment.yaml
+  - zipkin-service.yaml
+  - identity-deployment.yaml
+  - identity-service.yaml
+  - flight-deployment.yaml
+  - flight-service.yaml
+  - passenger-deployment.yaml
+  - passenger-service.yaml
+  - booking-deployment.yaml
+  - booking-service.yaml
+  - ingress.yaml

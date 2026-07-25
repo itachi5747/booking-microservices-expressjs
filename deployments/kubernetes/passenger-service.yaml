@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: passenger
+  namespace: booking
+spec:
+  type: ClusterIP
+  selector:
+    app: passenger
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3355
+      protocol: TCP
