@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: booking
+  namespace: booking
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: booking.local
+      http:
+        paths:
+          - path: /identity(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: identity
+                port:
+                  number: 80
+          - path: /flight(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: flight
+                port:
+                  number: 80
+          - path: /passenger(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: passenger
+                port:
+                  number: 80
+          - path: /booking(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: booking
+                port:
+                  number: 80
